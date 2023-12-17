@@ -29,7 +29,7 @@ function SignupForm() {
   return (
     <>
       <section className="flex justify-center items-center h-full py-[140px]">
-        <form onSubmit={handleSubmit(onSubmit)} action="" className="flex flex-col items-center min-w-[348px] w-11/12 sm:min-w-[600px] lg:min-w-[954px] gap-[20px] sm:gap-[30px] bg-[#A8ACC7] sm:bg-[#F0F1F9]  rounded-[20px] pt-[84px] sm:pt-[20px] lg:pt-[84px] pb-[87px] sm:pb-[32px] lg:pb-[99px] px-[49px] sm:px-[82px] lg:px-[227px]">
+        <form onSubmit={handleSubmit(onSubmit)} action="" className="flex flex-col items-center min-w-[348px] sm:min-w-[600px] lg:min-w-[954px] gap-[20px] sm:gap-[30px] bg-[#A8ACC7] sm:bg-[#F0F1F9]  rounded-[20px] pt-[84px] sm:pt-[20px] lg:pt-[84px] pb-[87px] sm:pb-[32px] lg:pb-[99px] px-[49px] sm:px-[82px] ">
           <span className="text-[#3B457B] font-medium text-2xl sm:text-4xl">Sign Up</span>
           <InputUi placeholder="Username" register={{ ...register("username", { required: "Username is required" }) }} errors={errors} inputName="username" />
           <InputUi register={{

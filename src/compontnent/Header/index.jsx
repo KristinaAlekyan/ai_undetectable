@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import homeIcon from "../../../src/assets/home_icon.svg";
 import burgerIcon from "../../../src/assets/burger_icon.svg";
+import profileIcon from "../../../src/assets/profile_small.svg";
 import { ButtonUi } from "../../shared/ButtonUi";
 
 const Header = () => {
@@ -45,10 +46,15 @@ const Header = () => {
           <ButtonUi title="Get Started" className="hidden lg:flex text-xl text-[#3B457B] bg-[#A4ABD9] rounded-[20px] px-10 py-1" />
         </li>
         <li className="text-base sm:text-xl text-[#F0F1F9]">
-          <Link to="/login">
+          {true?<Link to="/login">
             <span>Login</span>
+          </Link>:
+          <Link to="/profile"> 
+            <img className="w-[40px] h-[40px] " src={profileIcon} alt="" />
           </Link>
+          }
         </li>
+        
       </ul>
     </header>
   )
