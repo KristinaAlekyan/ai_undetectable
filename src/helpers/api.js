@@ -1,13 +1,13 @@
 
-export async function submitLoginForm(formdata) {
+export async function submitLoginForm({ email, password }) {
   fetch('/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      email: formdata.email,
-      password: formdata.password,
+      email,
+      password,
     }),
   })
     .then((response) => {

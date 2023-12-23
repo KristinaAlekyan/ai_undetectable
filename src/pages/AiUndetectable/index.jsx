@@ -1,22 +1,109 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 
-import { ButtonUi } from "../../shared/ButtonUi";
-import TextareaUi from "../../shared/TextareaUi";
+import { ButtonUI } from "../../shared/ButtonUI";
+import TextareaUI from "../../shared/TextareaUI";
 import copyIcon from "../../assets/copy.svg";
 import deleteIcon from "../../assets/delete.svg";
 import logoIcon from "../../assets/logo.svg";
 import downIcon from "../../assets/down.svg";
 import CustomSelect from "../../shared/CustomSelectUI";
+import { useDispatch } from "react-redux";
+import { fetchUserById } from "../../redux/aiUndetectetableSlice";
 
-const selectOptions = [{ id: 1, options: ["Humanize", "Improve Writing Quality"] }, { id: 2, options: ["High School Level", "Undergraduate Level", "PhD Level"]}, { id: 3, options: ["Increase Word Count", "Decrease Word Count"]  }]
+const selectOptions = [
+  { 
+    id: 1, 
+    options: [
+      {
+        value: "Humanize",
+        field: "humanize",
+      },
+      {
+        value: "Improve Writing Quality",
+        field: "improveWritingQuality",
+      },
+    ]
+  }, 
+  { 
+    id: 2, 
+    options: [
+      {
+        value: "High School Level",
+        field: "highSchoolLevel",
+      },
+      {
+        value: "Undergraduate Level",
+        field: "undergraduateLevel",
+      },
+      {
+        value: "PhD Level",
+        field: "phdLevel",
+      },
+    ]
+  }, 
+  { 
+    id: 3, 
+    options: [
+      {
+        value: "Increase Word Count",
+        field: "increaseWordCount",
+      },
+      {
+        value: "Decrease Word Count",
+        field: "decreaseWordCount",
+      },
+    ]
+  }
+];
 
 function AiUndetectable() {
-  const [text, setText] = useState("")
-  const [aidata, setAidata] = useState("Text from AI")
-  
-  const onChange = (e)=>{
-    setText(e.target.value)
+  const dispatch = useDispatch();
+  const [text, setText] = useState("");
+  const [disabled, setDisabled] = useState("");
+  const [aidata, setAidata] = useState("")
+  const [stateSelect, setStateSelect]=useState({
+    humanize: false,
+    improveWritingQuality: false,
+    highSchoolLevel: false,
+    undergraduateLevel: false,
+    phdLevel: false,
+    increaseWordCount: false,
+    decreaseWordCount: false
+  })
+  const [submitData, setSubmitData]=useState(null)
+
+  const onChange = (e) => setText(e.target.value);
+
+  const handleSelect = (e)=>{
+    const { checked, id } = e.target;
+
+    if(checked){
+      setStateSelect((prevState)=>{
+        return {
+          ...prevState,
+          [id]: checked
+        }
+      })
+    }
   }
+
+  const handleDelete = () => setText("");
+
+  const handleCopy = () => navigator.clipboard.writeText(aidata);
+
+  const handleSubmit = () => {
+    setDisabled(true);
+    setSubmitData((prevState) => ({
+      ...prevState,
+      text,
+      options: stateSelect
+    }));
+  }
+
+  useEffect(() => {
+    if (submitData) Promise.resolve(dispatch(fetchUserById(submitData))).finally(() => setDisabled(false));
+  },[submitData])
+  
   return (
     <main>
       <section className="flex flex-col px-[40px] py-[30px] sm:px-[85px] gap-[30px]">
@@ -37,26 +124,41 @@ function AiUndetectable() {
           </div>
         </div>
         <div className="flex flex-col flex-wrap justify-center lg:justify-between	sm:flex-row  gap-[30px] items-center lg:order-first">
-          <ButtonUi type="button" title="Purchase Words" className="bg-[#F0F1F9] text-[#3B457B] px-[43px] py-[10px] rounded-[10px] " />
+          <ButtonUI type="button" title="Purchase Words" className="bg-[#F0F1F9] text-[#3B457B] px-[43px] py-[10px] rounded-[10px] " />
 
           <div className="text-[#3B457B] text-sm font-medium p-[10px] rounded-[10px] bg-[#F0F1F9]">
             Premium word remaining: 0
           </div>
-          <CustomSelect selectOptions={selectOptions} />
+          <CustomSelect selectOptions={selectOptions} withObjectOptions={true} handleSelect={handleSelect}/>
         </div>
 
         <div className="flex flex-col lg:flex-row items-center py-[30px] gap-[60px]">
           <div className="flex flex-col items-center gap-[15px] w-full ">
             <h1 className="flex justify-center text-[#FFF] text-2xl font-medium">Your Essay</h1>
-            <TextareaUi className="p-[20px]" icon={deleteIcon} onChange={(e)=>onChange(e)} value={text}/>
+            <TextareaUI onClick={handleDelete} className="p-[20px]" icon={deleteIcon} onChange={onChange} value={text}/>
             <div className="flex items-center gap-[10px]  ">
-              <ButtonUi title="Submit" className="bg-[#A4ABD9] px-[44px] py-[10px] justify-center text-[#F0F1F9] text-sm rounded-[20px]" />
+              <ButtonUI 
+                title="Submit" 
+                className={`${disabled || !text.trim() ? "bg-[#A4ABD9]" : "bg-[#3B457B]"} border px-[44px] py-[10px] justify-center text-[#F0F1F9] text-sm rounded-[20px]`} 
+                onClick={handleSubmit}
+                disabled={disabled || !text.trim()}
+              />
               <p className="text-[#FFF]">Word count: 0</p>
             </div>
           </div>
           <div className="flex flex-col items-center gap-[15px] w-full ">
             <h1 className="flex justify-center text-[#FFF] text-2xl font-medium">Undetectable Version</h1>
-            <TextareaUi className="p-[20px] " icon={copyIcon} value={aidata} onChange={(e)=>console.log(e)} />
+
+            <TextareaUI 
+              onClick={handleCopy} 
+              className="p-[20px]" 
+              icon={copyIcon} 
+              placeholder="Text from AI" 
+              disabled={true} 
+              value={aidata} 
+              onChange={() => null} 
+            />
+
             <div className="flex items-center">
               <p className="text-[#FFF] py-[7px]">Word count: 0</p>
             </div>

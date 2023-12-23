@@ -1,17 +1,18 @@
-import DefaultLayout from "../compontnent/DefaultLayout";
-import Header from "../compontnent/Header";
-import Footer from "../compontnent/Footer"
-import GetStarted from "../compontnent/GetStarted";
+import DefaultLayout from "../components/DefaultLayout";
+import Header from "../components/Header";
+import Footer from "../components/Footer"
+import GetStarted from "../components/GetStarted";
 
-const Signup = () => {
+const Layout = ({ open, setOpen }) => {  
+  
   return (
-    <>
-      <Header/>
+    <div className={open ? "opacity-50 sm:opacity-100 transition-all" : ""}>
+      <Header setOpen={setOpen}/>
       <GetStarted/>
       <DefaultLayout/>
       <Footer/>    
-    </>
+    </div>
   );
 }
 
-export default Signup;
+export default Layout;

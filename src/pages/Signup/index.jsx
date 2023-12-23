@@ -1,9 +1,9 @@
 import React from "react"
-import SignupForm from "../../compontnent/SignupForm"
+import SignupForm from "../../components/SignupForm"
 
 function Signup() {
   return (
-    <main className="min-h-screen">
+    <main >
       <SignupForm/>
     </main>
   )

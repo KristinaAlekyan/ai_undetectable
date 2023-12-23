@@ -1,22 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import statusReducer from './activeStatusSlice';
-import storage from 'redux-persist/lib/storage';
-import persistReducer from "redux-persist/es/persistReducer";
-import persistStore from "redux-persist/es/persistStore";
+import submitData from './aiUndetectetableSlice';
 
-const persistConfig = {
-  key: 'root',
-  storage,
-}
 
 const rootReducer = combineReducers({
-  activeBtnStatus: statusReducer
+  submitTextAi: submitData,
 })
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer
+  reducer: rootReducer
 })
-
-export const persistor = persistStore(store)

@@ -1,18 +1,43 @@
-import React from "react"
+import React, { useLayoutEffect, useRef } from "react";
+
 
 function About() {
-  return (
-    <main className="flex flex-col gap-[15px] px-[21px] sm:px-[65px] lg:px-[122px] pb-[127px]">
-      <h1 className="text-xl sm:text-[32px] lg:text-[40px] text-center text-[#FFFFFF] sm:leading-9 lg:leading-10 mx-[36px] my-[30px] space-y-[30px]">AI Undetectable Essays and Bypassing AI Detectors</h1>
+  const privacyRef = useRef(); 
+  const termsRef = useRef(); 
+  const supportRef = useRef();
 
+  useLayoutEffect(() => {
+    const privacyScrolling = sessionStorage.getItem("privacy");
+    const termsScrolling = sessionStorage.getItem("terms");
+    const supportScrolling = sessionStorage.getItem("support");
+  
+    if (privacyScrolling) {
+      privacyRef.current.scrollIntoView();
+      sessionStorage.removeItem("privacy");
+    }
+
+    if (termsScrolling) {
+      termsRef.current.scrollIntoView();
+      sessionStorage.removeItem("terms");
+    }
+    if (supportScrolling) {
+      supportRef.current.scrollIntoView();
+      sessionStorage.removeItem("support");
+    }
+  }, []);
+  return (
+    <main className="flex flex-col gap-[15px] px-[21px] sm:px-[50px] lg:px-[70px] pb-[127px]">
+      <h1 className="text-xl sm:text-[32px] lg:text-[40px] text-center text-[#FFFFFF] sm:leading-9 lg:leading-10 mx-[36px] my-[30px] space-y-[30px]">AI Undetectable Essays and Bypassing AI Detectors</h1>
+      
+      {/* About Us section */}
       <section className="bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[26px] sm:py-[23px] lg:py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
         <div className="flex flex-col gap-[15px] sm:gap-[30px]">
           <span className="text-[20px] lg:text-[24px] font-semibold">About Us</span>
           <div>AI Undetectable is a cutting-edge platform dedicated to helping students and professionals seamlessly integrate AI-generated content into their academic and professional projects. We offer tools and resources to transform AI-written essays into undetectable compositions that can bypass AI detectors, ensuring a seamless submission process. Our mission is to empower users to harness the power of AI-generated content, while maintaining discretion and successfully navigating the challenges posed by AI detection systems.</div>
         </div>
       </section>
-
-      <section className="flex flex-col gap-[30px] bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
+      {/* Privacy Policy section */}
+      <section ref={privacyRef} className="flex flex-col gap-[30px] bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
         <div className="flex flex-col gap-[15px] sm:gap-[30px]">
           <span className="text-[20px] lg:text-[24px] font-semibold">Privacy Policy</span>
           <div>At AI Undetectable, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you use our services. By using our website, you agree to the terms outlined in this Privacy Policy.</div>
@@ -66,7 +91,8 @@ function About() {
         </div>
       </section>
 
-      <section className="bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
+      {/* Terms and Conditions section */}
+      <section ref={termsRef} className="bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
         <div className="flex flex-col gap-[15px] sm:gap-[30px]">
           <span className="text-[20px] lg:text-[24px] font-semibold">Terms and Conditions</span>
           <div>By using AI Undetectable, you agree to comply with these Terms and Conditions. These terms govern your access to and use of our services, including any content, functionality, and features offered on our website.</div>
@@ -97,7 +123,8 @@ function About() {
           <div>We reserve the right to update or modify these Terms and Conditions at any time without prior notice. Your continued use of our services constitutes your acceptance of any changes to the terms. Please review our full Terms and Conditions periodically to stay informed about any updates or changes.</div>
         </div>
       </section>
-      
+
+      {/* Disclaimer section */}
       <section className="bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
         <div className="flex flex-col gap-[15px] sm:gap-[30px]">
           <span className="text-[20px] lg:text-[24px] font-semibold">Disclaimer</span>
@@ -108,7 +135,8 @@ function About() {
        </div>
       </section>
 
-      <section className="bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
+      {/*Contact Us section */}
+      <section ref={supportRef} className="bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
         <div className="flex flex-col gap-[15px] sm:gap-[30px]">
           <span className="text-[20px] lg:text-[24px] font-semibold">Contact Us</span>
           <div>If you have any questions or concerns about AI Undetectable, our services, or the information provided on our website, please feel free to contact us. You can reach us via email at contact@aiundetectable.com. We are committed to providing exceptional service and will respond to your inquiry as soon as possible.</div>

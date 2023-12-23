@@ -7,7 +7,11 @@ module.exports = {
     colors: {
       'bgColor': '#3B457B',
     },
-    extend: {},
+    extend: {
+      filter: {
+        "list-dot": "drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));"
+      }
+    },
   },
   plugins: [],
 }

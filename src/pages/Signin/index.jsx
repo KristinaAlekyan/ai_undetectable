@@ -1,10 +1,10 @@
 import React from "react"
 
-import SigninForm from "../../compontnent/SigninForm";
+import SigninForm from "../../components/SigninForm";
 
 function Signin() {
   return (
-    <main className="min-h-screen">
+    <main >
       <SigninForm/>
     </main>
   )

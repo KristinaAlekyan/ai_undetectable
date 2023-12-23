@@ -6,3 +6,7 @@ input:-webkit-autofill:active  {
   transition: background-color 5000s;
   -webkit-text-fill-color: #3B457B !important;
 }
+
+* {
+  scroll-behavior: smooth;
+}

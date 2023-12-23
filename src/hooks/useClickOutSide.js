@@ -2,11 +2,12 @@ import { useEffect,useRef } from "react";
 
 export const useClickOutside = (handler) => {
     const ref = useRef();
+    const labelRef = useRef();
   
     const handleClickOutside = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) {
-        handler();
-      }
+      if (event.target === labelRef.current) return;
+
+      if (ref.current && !ref.current.contains(event.target)) handler();
     };
   
     useEffect(() => {
@@ -17,7 +18,8 @@ export const useClickOutside = (handler) => {
       };
     }, [handler]);
   
-    return ref;
+    return {
+      ref,
+      labelRef,
+    };
   };
-  
-  
