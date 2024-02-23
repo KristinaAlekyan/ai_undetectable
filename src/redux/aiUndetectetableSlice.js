@@ -1,37 +1,52 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-export const fetchUserById = createAsyncThunk(
+import axios from 'axios';
+
+export const fetchAiData = createAsyncThunk(
   'submitTextAi/submitAiForm',
-  async (formData, thunkAPI) => {
-    const response = await fetch(
-      "https://aiundetectable.com/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+  async (data, { rejectWithValue }) => {
+    const { optionsData, apiEndpoint } = data
+    try {
+      if (apiEndpoint) {
+        const response = await axios.post(`${process.env.REACT_APP_API_ENDPOINT}${apiEndpoint}`, optionsData, {
+          withCredentials: true
+        }
+        )
+        const data = response
+        return data ? data.data.text : '';
       }
-    );
-    const data = await response.json();
-    
-    console.log(data, "data from response", thunkAPI);
-    return data;
+    } catch (err) {
+      if (!err.response) {
+        throw err
+      }
+      return rejectWithValue(err.response.data.error)
+    }
   }
 )
+const initialState = {
+  loading: false,
+  text: "",
+  error: "",
+}
+
 export const submitAiUndetectBale = createSlice({
   name: 'submitTextAi',
-  initialState: '',
+  initialState,
   reducers: {
     submitAiForm: (state, action) => {
-      console.log(action, 'action')
-      state = action.payload;
+      state.text = action.payload
+      return state
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchUserById.fulfilled, (state, action) => {
-      console.log(state, 'state')
-      console.log(action, 'actionnnn in creaete async thubkjh')
-      return state
+    builder.addCase(fetchAiData.fulfilled, (state, action) => {
+      return { ...state, text: action.payload, loading: false }
     })
+      .addCase(fetchAiData.pending, (state) => {
+        return { ...state, loading: true }
+      })
+      .addCase(fetchAiData.rejected, (state, action) => {
+        return { ...state, error: action.payload, loading: false }
+      });
   }
 })
 

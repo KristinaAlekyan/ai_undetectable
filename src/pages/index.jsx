@@ -1,16 +1,17 @@
-import DefaultLayout from "../components/DefaultLayout";
 import Header from "../components/Header";
 import Footer from "../components/Footer"
 import GetStarted from "../components/GetStarted";
+import { Outlet } from "react-router";
 
-const Layout = ({ open, setOpen }) => {  
-  
+const Layout = () => {
   return (
-    <div className={open ? "opacity-50 sm:opacity-100 transition-all" : ""}>
-      <Header setOpen={setOpen}/>
-      <GetStarted/>
-      <DefaultLayout/>
-      <Footer/>    
+    <div >
+      <Header />
+      <main>
+        <GetStarted />
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 }

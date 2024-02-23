@@ -1,16 +1,25 @@
-import { useState } from "react";
-import MobileMenu from "./components/MobileMenu";
-import Layout from "./pages";
 import "./App.css";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import DefaultLayout from "./components/DefaultLayout";
 
 function App() {
-  const [open, setOpen] = useState(false);
-  
+
   return (
-    <div className="bg-bgColor flex flex-col ">
-      <Layout open={open} setOpen={setOpen}/>
-      <MobileMenu open={open} setOpen={setOpen}/>
-    </div>
+    <>
+    <HelmetProvider>
+      <Helmet>
+        <html lang="en" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="A cutting-edge platform dedicated to helping students and professionals seamlessly integrate AI-generated content into their academic and professional project." />
+        <title>AI Undetectable | Undetectable AI Writing | Bypass AI Detectors</title>
+      </Helmet>
+      </HelmetProvider>
+
+      <div className="bg-bgColor flex flex-col ">
+        <DefaultLayout/>
+      </div>
+    </>
+
   )
 }
 

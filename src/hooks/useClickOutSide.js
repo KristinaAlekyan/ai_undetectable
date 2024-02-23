@@ -1,4 +1,4 @@
-import { useEffect,useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export const useClickOutside = (handler) => {
     const ref = useRef();
@@ -16,6 +16,7 @@ export const useClickOutside = (handler) => {
       return () => {
         document.removeEventListener('mousedown', handleClickOutside);
       };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [handler]);
   
     return {

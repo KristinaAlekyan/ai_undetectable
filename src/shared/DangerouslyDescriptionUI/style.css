@@ -1,0 +1,10 @@
+ .d-descriptionUI {
+    font-family: pt-sans;
+    font-weight: 400;
+}
+.d-descriptionUI.black {
+    color: #000;
+}
+.d-descriptionUI.white {
+    color: var(--whiteRoot);
+}

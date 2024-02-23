@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { ButtonUi } from "../../shared/ButtonUi";
-import InputUi from "../../shared/InputUi";
+import { ButtonUI } from "../../shared/ButtonUI";
+import InputUI from "../../shared/InputUI";
 import { submitLoginForm } from "../../helpers/api"
 
 function SigninForm() {
@@ -23,7 +23,7 @@ function SigninForm() {
     <section className="flex justify-center items-center h-full py-[160px]">
       <form onSubmit={handleSubmit(onSubmit)} action="" className="flex flex-col items-center w-[348px] sm:w-[600px] lg:w-[954px] gap-[20px] sm:gap-[30px] bg-[#A8ACC7] sm:bg-[#F0F1F9]  rounded-[20px] pt-[84px] sm:pt-[20px] lg:pt-[84px] pb-[87px] sm:pb-[32px] lg:pb-[99px] px-[49px] sm:px-[82px] lg:px-[227px]">
         <span className="text-[#3B457B] font-medium text-2xl sm:text-4xl">Login</span>
-        <InputUi register={{
+        <InputUI register={{
           ...register("email", {
             required: "Email is required",
             pattern: {
@@ -37,7 +37,7 @@ function SigninForm() {
           type="text"
           placeholder="User Email"
         />
-        <InputUi register={{
+        <InputUI register={{
           ...register("password", {
             required: "Password is required",
             minLength: {
@@ -56,7 +56,7 @@ function SigninForm() {
           placeholder="Password"
         />
         
-        <ButtonUi type="submit" title="Login" className="text-base sm:text-2xl text-[#F0F1F9] bg-[#3B457B] rounded-[10px] sm:rounded-[20px] px-[96px] py-[10px] sm:px-[82px] sm:py-[15px] lg:px-[93px] lg:py-[10px]" />
+        <ButtonUI type="submit" title="Login" className="text-base sm:text-2xl text-[#F0F1F9] bg-[#3B457B] rounded-[10px] sm:rounded-[20px] px-[96px] py-[10px] sm:px-[82px] sm:py-[15px] lg:px-[93px] lg:py-[10px]" />
         <div className="flex flex-col items-center gap-[15px]">
           <span className="text-base sm:text-2xl text-[#3B457B]">Resend Email Verification</span>
           <Link to="/signup">

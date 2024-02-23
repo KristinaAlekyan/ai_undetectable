@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import React  from "react"
 import { useForm } from "react-hook-form";
 
-import { ButtonUi } from "../../shared/ButtonUi";
-import InputUi from "../../shared/InputUi";
+import { ButtonUI } from "../../shared/ButtonUI";
+import InputUI from "../../shared/InputUI";
 import { submitSignupForm } from "../../helpers/api"
 
 function SignupForm() {
@@ -31,8 +31,8 @@ function SignupForm() {
       <section className="flex justify-center items-center h-full py-[140px]">
         <form onSubmit={handleSubmit(onSubmit)} action="" className="flex flex-col items-center min-w-[348px] sm:min-w-[600px] lg:min-w-[954px] gap-[20px] sm:gap-[30px] bg-[#A8ACC7] sm:bg-[#F0F1F9]  rounded-[20px] pt-[84px] sm:pt-[20px] lg:pt-[84px] pb-[87px] sm:pb-[32px] lg:pb-[99px] px-[49px] sm:px-[82px] ">
           <span className="text-[#3B457B] font-medium text-2xl sm:text-4xl">Sign Up</span>
-          <InputUi placeholder="Username" register={{ ...register("username", { required: "Username is required" }) }} errors={errors} inputName="username" />
-          <InputUi register={{
+          <InputUI placeholder="Username" register={{ ...register("username", { required: "Username is required" }) }} errors={errors} inputName="username" />
+          <InputUI register={{
             ...register("email", {
               required: "Email is required",
               pattern: {
@@ -47,7 +47,7 @@ function SignupForm() {
             placeholder="User Email"
             className="w-[750px]"
           />
-          <InputUi register={{
+          <InputUI register={{
             ...register("password", {
               required: "Password is required",
               minLength: {
@@ -64,7 +64,7 @@ function SignupForm() {
             errors={errors}
             type="password"
             inputName="password" />
-          <InputUi errors={errors} register={{
+          <InputUI errors={errors} register={{
             ...register("confirmpassowrd", {
               required: "Confirm password is required",
               validate: confirmPasswordValidate,
@@ -82,7 +82,7 @@ function SignupForm() {
             type="password"
             inputName="confirmpassowrd" 
           />
-          <ButtonUi title="Sign up" className="text-base sm:text-2xl text-[#F0F1F9] bg-[#3B457B] rounded-[10px] sm:rounded-[20px] px-[96px] py-[10px] sm:px-[82px] sm:py-[15px] lg:px-[93px] lg:py-[10px]" />
+          <ButtonUI title="Sign up" className="text-base sm:text-2xl text-[#F0F1F9] bg-[#3B457B] rounded-[10px] sm:rounded-[20px] px-[96px] py-[10px] sm:px-[82px] sm:py-[15px] lg:px-[93px] lg:py-[10px]" />
           <div className="flex flex-col items-center gap-[15px]">
             <span className="text-base sm:text-2xl text-[#3B457B]"> Resend Email Verification </span>
             <Link to="/signup">

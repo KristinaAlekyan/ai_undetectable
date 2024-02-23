@@ -2,15 +2,15 @@ import React, { useLayoutEffect, useRef } from "react";
 
 
 function About() {
-  const privacyRef = useRef(); 
-  const termsRef = useRef(); 
+  const privacyRef = useRef();
+  const termsRef = useRef();
   const supportRef = useRef();
 
   useLayoutEffect(() => {
     const privacyScrolling = sessionStorage.getItem("privacy");
     const termsScrolling = sessionStorage.getItem("terms");
     const supportScrolling = sessionStorage.getItem("support");
-  
+
     if (privacyScrolling) {
       privacyRef.current.scrollIntoView();
       sessionStorage.removeItem("privacy");
@@ -26,9 +26,9 @@ function About() {
     }
   }, []);
   return (
-    <main className="flex flex-col gap-[15px] px-[21px] sm:px-[50px] lg:px-[70px] pb-[127px]">
+    <div className="flex flex-col gap-[15px] px-[21px] sm:px-[50px] lg:px-[70px] pb-[127px]">
       <h1 className="text-xl sm:text-[32px] lg:text-[40px] text-center text-[#FFFFFF] sm:leading-9 lg:leading-10 mx-[36px] my-[30px] space-y-[30px]">AI Undetectable Essays and Bypassing AI Detectors</h1>
-      
+
       {/* About Us section */}
       <section className="bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[26px] sm:py-[23px] lg:py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
         <div className="flex flex-col gap-[15px] sm:gap-[30px]">
@@ -92,11 +92,11 @@ function About() {
       </section>
 
       {/* Terms and Conditions section */}
-      <section ref={termsRef} className="bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
+      <section ref={termsRef} className="flex flex-col gap-[15px] sm:gap-[30px] bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
         <div className="flex flex-col gap-[15px] sm:gap-[30px]">
           <span className="text-[20px] lg:text-[24px] font-semibold">Terms and Conditions</span>
           <div>By using AI Undetectable, you agree to comply with these Terms and Conditions. These terms govern your access to and use of our services, including any content, functionality, and features offered on our website.</div>
-        </div>        
+        </div>
         <div className="flex flex-col gap-[15px] sm:gap-[30px]">
           <span className="text-[20px] lg:text-[24px] font-semibold">Use of Our Services</span>
           <div>You are granted a limited, non-exclusive, non-transferable, and revocable license to access and use our services for personal and non-commercial purposes. You agree not to use our services for any unlawful or prohibited purposes, and to comply with all applicable laws and regulations.</div>
@@ -125,24 +125,26 @@ function About() {
       </section>
 
       {/* Disclaimer section */}
-      <section className="bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
+      <section className="flex flex-col gap-[15px] sm:gap-[30px] bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
         <div className="flex flex-col gap-[15px] sm:gap-[30px]">
           <span className="text-[20px] lg:text-[24px] font-semibold">Disclaimer</span>
           <div>AI Undetectable provides resources and information for educational purposes only. While we strive to ensure the accuracy and reliability of the information on our website, we cannot guarantee the correctness or completeness of the content. We are not responsible for any errors or omissions, or for any actions taken based on the information provided.</div>
           <div>The use of our website and services is at your own risk. AI Undetectable disclaims any liability for any damages or losses, including but not limited to direct, indirect, incidental, special, consequential, or punitive damages, arising from your use of our services or reliance on the information provided on our website.</div>
           <div>AI Undetectable does not endorse or assume responsibility for any third-party websites, products, or services that may be linked to or mentioned on our website. You are solely responsible for your use of any third-party websites or services and for any consequences resulting from such use.</div>
           <div>By using our services, you acknowledge and agree that AI Undetectable is not responsible for any ethical or legal consequences arising from the use of AI-generated content. You are solely responsible for the appropriate use of our services and for ensuring compliance with any applicable academic or professional standards and requirements.</div>
-       </div>
+        </div>
       </section>
 
       {/*Contact Us section */}
       <section ref={supportRef} className="bg-[#F0F1F9] rounded-[20px] pl-[20px] sm:pl-[30px] lg:px-[41px] py-[35px] pr-[35px] sm:pr-[19px] lg:pr-[103px] text-[#3B457B]">
         <div className="flex flex-col gap-[15px] sm:gap-[30px]">
           <span className="text-[20px] lg:text-[24px] font-semibold">Contact Us</span>
-          <div>If you have any questions or concerns about AI Undetectable, our services, or the information provided on our website, please feel free to contact us. You can reach us via email at contact@aiundetectable.com. We are committed to providing exceptional service and will respond to your inquiry as soon as possible.</div>
+          <div className="link">If you have any questions or concerns about AI Undetectable, our services, or the information provided on our website, please feel free to contact us. You can reach us via email at 
+            <a href="mailto:contact@aiundetectable.com?subject=Mail from our Website" > contact@aiundetectable.com </a> 
+          . We are committed to providing exceptional service and will respond to your inquiry as soon as possible.</div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
 

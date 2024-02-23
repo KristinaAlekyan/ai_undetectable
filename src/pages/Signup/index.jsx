@@ -1,12 +1,6 @@
 import React from "react"
 import SignupForm from "../../components/SignupForm"
 
-function Signup() {
-  return (
-    <main >
-      <SignupForm/>
-    </main>
-  )
-}
+const Signup = () => <SignupForm />
 
 export default Signup

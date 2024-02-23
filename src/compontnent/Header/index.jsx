@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import homeIcon from "../../../src/assets/home_icon.svg";
 import burgerIcon from "../../../src/assets/burger_icon.svg";
 import profileIcon from "../../../src/assets/profile_small.svg";
-import { ButtonUi } from "../../shared/ButtonUi";
+import { ButtonUI } from "../../shared/ButtonUI";
 
 const Header = () => {
   return (
@@ -43,7 +43,7 @@ const Header = () => {
           <span>FAQ</span>
         </li>
         <li >
-          <ButtonUi title="Get Started" className="hidden lg:flex text-xl text-[#3B457B] bg-[#A4ABD9] rounded-[20px] px-10 py-1" />
+          <ButtonUI title="Get Started" className="hidden lg:flex text-xl text-[#3B457B] bg-[#A4ABD9] rounded-[20px] px-10 py-1" />
         </li>
         <li className="text-base sm:text-xl text-[#F0F1F9]">
           {true?<Link to="/login">

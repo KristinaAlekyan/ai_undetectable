@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom";
 
-import { ButtonUi } from "../../shared/ButtonUi"
+import { ButtonUI } from "../../shared/ButtonUI"
 import homeIcon from "../../../src/assets/home_icon.svg";
 
 function GetStarted() {
@@ -14,7 +14,7 @@ function GetStarted() {
       <div className="flex flex-col gap-[30px] pt-[30px] lg:pb-[100px] px-[27px] sm:px-[88px] items-center text-[#FFF] text-center">
         <h1 className="text-xl sm:text-[28px] lg:text-[40px] font-medium">Embrace the future of AI Excellence</h1>
         <p className="text-base sm:text-xl lg:text-2xl">A cutting-edge platform dedicated to helping student and professionals seamlessly integrate AI-generated content into their academic and professional project.</p>
-        <ButtonUi  title="Get Started" className="flex lg:hidden text-xl text-[#3B457B] bg-[#A4ABD9] rounded-[10px] px-10 py-1" />
+        <ButtonUI  title="Get Started" className="flex lg:hidden text-xl text-[#3B457B] bg-[#A4ABD9] rounded-[10px] px-10 py-1" />
       </div>
     )
   } else {
@@ -26,7 +26,7 @@ function GetStarted() {
           </Link>
         </div>
 
-        <ButtonUi  title="Get Started" className="flex lg:hidden text-xl text-[#3B457B] bg-[#A4ABD9] rounded-[10px] px-10 py-1" />
+        <ButtonUI  title="Get Started" className="flex lg:hidden text-xl text-[#3B457B] bg-[#A4ABD9] rounded-[10px] px-10 py-1" />
       </div>
     )
   }  

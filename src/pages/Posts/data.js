@@ -50,7 +50,7 @@ const postData = [
           },
           {
             id: 122,
-            part:"For platforms like AIUndetectable.com and WritingUndetectable.com, the focus is on creating AI-generated content that can bypass these detection methods. They aim to produce content that is original, high quality, and undetectable as AI-generated. However, the effectiveness and capabilities of such platforms in consistently outsmarting AI detectors are subject to continual advancements in both AI generation and detection technologies."
+            part:"For platforms like <a href='https://aiundetectable.com' target='_blank'>AIUndetectable.com </a> and <a href='https://writingUndetectable.com' target='_blank'>WritingUndetectable.com </a> , the focus is on creating AI-generated content that can bypass these detection methods. They aim to produce content that is original, high quality, and undetectable as AI-generated. However, the effectiveness and capabilities of such platforms in consistently outsmarting AI detectors are subject to continual advancements in both AI generation and detection technologies."
           },
           {
             id: 123,
@@ -63,25 +63,25 @@ const postData = [
   {
     id: 2,
     title: "Top AI Bypassing Tools",
-    description: "AI bypassing tools have become increasingly relevant as AI content detection methods improve. Two notable tools in this field are AIUndetectable.com and WritingUndetectable.com, each taking a unique approach to produce undetectable AI-generated content.",
+    description: "AI bypassing tools have become increasingly relevant as AI content detection methods improve. Two notable tools in this field are <a href='https://aiundetectable.com' target='_blank'>AIUndetectable.com </a> and WritingUndetectable.com, each taking a unique approach to produce undetectable AI-generated content.",
     info: [
       {
         id: 4,
-        title: "AIUndetectable.com: Rewriting AI into Humanized Writing", 
+        title: "<a href='https://aiundetectable.com' target='_blank'>AIUndetectable.com </a>: Rewriting AI into Humanized Writing", 
         description: [
           {
             id: 201,
-            part: "AIUndetectable.com is designed to transform AI-generated content into a format that appears as if it were written by a human, thereby bypassing AI detection tools. This tool is particularly useful for users who want to ensure their AI-generated content remains undetectable by the latest AI detectors."
+            part: "<a href='https://aiundetectable.com' target='_blank'>AIUndetectable.com </a> is designed to transform AI-generated content into a format that appears as if it were written by a human, thereby bypassing AI detection tools. This tool is particularly useful for users who want to ensure their AI-generated content remains undetectable by the latest AI detectors."
           }
         ]
       }, 
       {
         id: 5,
-        title: "Methods Used by AIUndetectable.com", 
+        title: "Methods Used by <a href='https://aiundetectable.com' target='_blank'>AIUndetectable.com </a>", 
         description: [
           {
             id: 211,
-            part: "1. Advanced Rewriting Algorithms: AIUndetectable.com employs sophisticated algorithms that rewrite AI-generated content, focusing on altering sentence structures, vocabulary, and syntax to mimic human writing styles."
+            part: "1. Advanced Rewriting Algorithms: <a href='https://aiundetectable.com' target='_blank'>AIUndetectable.com </a>employs sophisticated algorithms that rewrite AI-generated content, focusing on altering sentence structures, vocabulary, and syntax to mimic human writing styles."
           },
           {
             id: 212,
@@ -93,7 +93,7 @@ const postData = [
           },
           {
             id: 214,
-            part: "4. Variability and Randomness: AIUndetectable.com introduces variability and randomness in the text to avoid the predictability often associated with AI writing."
+            part: "4. Variability and Randomness: <a href='https://aiundetectable.com' target='_blank'>AIUndetectable.com </a> introduces variability and randomness in the text to avoid the predictability often associated with AI writing."
           },
           {
             id: 215,
@@ -103,17 +103,17 @@ const postData = [
       },
       {
         id: 6,
-        title: "WritingUndetectable.com: Generating Undetectable Writing from Scratch", 
+        title: "<a href='https://writingundetectable.com' target='_blank'>WritingUndetectable.com </a> : Generating Undetectable Writing from Scratch", 
         description: [
           {
             id: 221,
-            part: "WritingUndetectable.com takes a different approach by generating undetectable AI-written content from scratch. It is geared towards producing high-quality, original content that detectors cannot easily flag as AI-generated."
+            part: "<a href='https://writingundetectable.com' target='_blank'>WritingUndetectable.com </a> takes a different approach by generating undetectable AI-written content from scratch. It is geared towards producing high-quality, original content that detectors cannot easily flag as AI-generated."
           }
         ]
       },
       {
         id: 7,
-        title: "Features of WritingUndetectable.com", 
+        title: "Features of <a href='https://writingundetectable.com' target='_blank'>WritingUndetectable.com </a>", 
         description: [
           {
             id: 231,
@@ -121,7 +121,7 @@ const postData = [
           },
           {
             id: 232,
-            part: "2. High-Quality Output: WritingUndetectable.com focuses on delivering content that is not only undetectable but also of a higher quality in terms of creativity, coherence, and depth compared to standard AI-generated text."
+            part: "2. High-Quality Output: <a href='https://writingundetectable.com' target='_blank'>WritingUndetectable.com </a> focuses on delivering content that is not only undetectable but also of a higher quality in terms of creativity, coherence, and depth compared to standard AI-generated text."
           },
           {
             id: 233,
@@ -133,7 +133,7 @@ const postData = [
           },
           {
             id: 235,
-            part: "5. Continuous Learning and Adaptation: WritingUndetectable.com constantly evolves by learning from a vast array of high-quality human writing, ensuring its output remains undetectable as AI technology advances."
+            part: "5. Continuous Learning and Adaptation: <a href='https://writingundetectable.com' target='_blank'>WritingUndetectable.com </a> constantly evolves by learning from a vast array of high-quality human writing, ensuring its output remains undetectable as AI technology advances."
           }
         ]
       },
@@ -143,7 +143,7 @@ const postData = [
         description: [
           {
             id: 241,
-            part: "Both AIUndetectable.com and WritingUndetectable.com represent significant advancements in AI writing technology, each catering to different needs in the realm of undetectable AI content creation. AIUndetectable.com excels in transforming existing AI content into a form that mirrors human writing, while WritingUndetectable.com focuses on generating high-quality, original content from scratch. As AI detection methods become more sophisticated, tools like these will likely continue to evolve, pushing the boundaries of AI writing capabilities."
+            part: "Both <a href='https://aiundetectable.com' target='_blank'>AIUndetectable.com </a> and <a href='https://writingundetectable.com' target='_blank'>WritingUndetectable.com </a> represent significant advancements in AI writing technology, each catering to different needs in the realm of undetectable AI content creation. <a href='https://aiundetectable.com' target='_blank'>AIUndetectable.com </a> excels in transforming existing AI content into a form that mirrors human writing, while <a href='https://writingundetectable.com' target='_blank'>WritingUndetectable.com </a> focuses on generating high-quality, original content from scratch. As AI detection methods become more sophisticated, tools like these will likely continue to evolve, pushing the boundaries of AI writing capabilities."
           }
         ]
       }
@@ -177,15 +177,15 @@ const postData = [
       },
       {
         id: 11,
-        title: "TherapyWithAI.com", 
+        title: `<a href=' http://therapywithai.com' target='_blank'>TherapyWithAI.com</a>` , 
         description: [
           {
             id: 321,
-            part: "Platforms like TherapyWithAI.com are designed to leverage the capabilities of AI in providing effective therapy solutions. They emphasize the use of high-level AI therapy methods, aiming to make mental health care more accessible and user-friendly. By offering therapy through AI, such platforms cater to a broader audience, ensuring that more people can benefit from mental health support regardless of their geographical location or financial constraints."
+            part: "Platforms like <a href=' http://therapywithai.com' target='_blank'>TherapyWithAI.com</a> are designed to leverage the capabilities of AI in providing effective therapy solutions. They emphasize the use of high-level AI therapy methods, aiming to make mental health care more accessible and user-friendly. By offering therapy through AI, such platforms cater to a broader audience, ensuring that more people can benefit from mental health support regardless of their geographical location or financial constraints."
           },
           {
             id: 322,
-            part: "In conclusion, AI therapists and platforms like TherapyWithAI.com represent a significant shift in the way mental health services are delivered. They bring the promise of more accessible, efficient, and personalized mental health care, harnessing the power of AI to cater to the diverse needs of individuals seeking psychological support."
+            part: "In conclusion, AI therapists and platforms like <a href=' http://therapywithai.com' target='_blank'>TherapyWithAI.com</a> represent a significant shift in the way mental health services are delivered. They bring the promise of more accessible, efficient, and personalized mental health care, harnessing the power of AI to cater to the diverse needs of individuals seeking psychological support."
           }
         ]
       }

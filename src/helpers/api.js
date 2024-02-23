@@ -1,6 +1,5 @@
-
-export async function submitLoginForm({ email, password }) {
-  fetch('/login', {
+export function submitLoginForm({ email, password }) {
+ return fetch('https://aiundetectable.com/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -11,6 +10,7 @@ export async function submitLoginForm({ email, password }) {
     }),
   })
     .then((response) => {
+
       if (response.ok) {
         return response.json();
       } else {
@@ -19,11 +19,15 @@ export async function submitLoginForm({ email, password }) {
         });
       }
     })
+    .then((data) => {
+      localStorage.setItem('user', JSON.stringify(data.user));
+      return data
+  })    
 }
 
 
 export async function submitSignupForm(formdata) {
-  fetch('/signup', {
+  fetch('https://aiundetectable.com/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -43,4 +47,19 @@ export async function submitSignupForm(formdata) {
         });
       }
     })
+}
+
+export async function logout() {
+  const response = await fetch("https://aiundetectable.com/logout", {
+    method: "POST",
+  })
+  .then((response) => {
+    if (response.ok) {
+      localStorage.clear();
+    } else {
+      return response.json().then((data) => {
+        throw new Error(data.error);
+      });
+    }
+  })
 }
